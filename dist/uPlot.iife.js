@@ -4933,8 +4933,10 @@ var uPlot = (function () {
 
 					let j = 0;
 
-					for (let k in vals)
-						legendCells[i][j++].firstChild.nodeValue = vals[k];
+					for (let k in vals) {
+	          if (legendCells[i][j].firstChild?.nodeValue)
+	            legendCells[i][j++].firstChild.nodeValue = vals[k];
+	        }
 				}
 			}
 		}
